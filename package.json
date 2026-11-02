@@ -1,0 +1,10 @@
+{
+  "name": "toxicology-course-notes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Source-indexed Chinese toxicology course notes and a static reader",
+  "type": "module",
+  "scripts": {"build": "node scripts/build.mjs", "verify": "node scripts/verify.mjs"},
+  "engines": {"node": ">=20"},
+  "devDependencies": {"marked": "17.0.5"}
+}

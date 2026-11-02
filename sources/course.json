@@ -1,0 +1,115 @@
+{
+  "title": "毒理学课程笔记",
+  "updated": "2026-11-02",
+  "repositoryUrl": "https://github.com/hanson2017ear/toxicology-course-notes",
+  "source": {
+    "pageCount": 316,
+    "sha256": "fe5be2e325aea4539bceaebc8eca498e9ab8a7ad1779fb8edec1dd718b6870d5"
+  },
+  "units": [
+    {
+      "id": "unit-01",
+      "number": "01",
+      "title": "绪论与课程安排",
+      "pages": "1—4",
+      "range": [
+        1,
+        4
+      ],
+      "summary": "先看课程范围，再区分真实课次与课件顺序。",
+      "file": "notes/01.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-02",
+      "number": "02",
+      "title": "毒理学基本概念",
+      "pages": "5—38",
+      "range": [
+        5,
+        38
+      ],
+      "summary": "剂量、暴露、毒性参数与安全限值的关系。",
+      "file": "notes/02.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-03",
+      "number": "03",
+      "title": "爱莉丝与工业毒理学",
+      "pages": "39—83",
+      "range": [
+        39,
+        83
+      ],
+      "summary": "从职业卫生调查理解工作场所暴露和预防。",
+      "file": "notes/03.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-04",
+      "number": "04",
+      "title": "拿破仑死亡之谜、砷与汞",
+      "pages": "85—128",
+      "range": [
+        85,
+        128
+      ],
+      "summary": "用历史争议学习证据判断，比较砷与不同形态的汞。",
+      "file": "notes/04.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-05",
+      "number": "05",
+      "title": "帝国灭亡与铅毒理",
+      "pages": "129—170",
+      "range": [
+        129,
+        170
+      ],
+      "summary": "从暴露来源到血红素合成、神经与肾脏损伤。",
+      "file": "notes/05.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-06",
+      "number": "06",
+      "title": "镉与金属毒理总结",
+      "pages": "171—180",
+      "range": [
+        171,
+        180
+      ],
+      "summary": "镉的来源、体内过程和靶器官，回顾金属共同特点。",
+      "file": "notes/06.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-07",
+      "number": "07",
+      "title": "舌尖上的食品安全",
+      "pages": "182—248",
+      "range": [
+        182,
+        248
+      ],
+      "summary": "区分添加剂、污染物、违规添加与实际暴露风险。",
+      "file": "notes/07.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    },
+    {
+      "id": "unit-08",
+      "number": "08",
+      "title": "使女的故事和生殖毒理学",
+      "pages": "249—316",
+      "range": [
+        249,
+        316
+      ],
+      "summary": "从激素轴、性腺靶细胞到生殖发育结局与评价方法。",
+      "file": "notes/08.md",
+      "sourceLabel": "课件主题，非已核实课次"
+    }
+  ]
+}

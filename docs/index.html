@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="依据316页毒理学课程材料整理的中文学习笔记：定义、机制、历史案例与复习问题，附原PDF页序索引。">
+  <meta name="color-scheme" content="light dark">
+  <title>毒理学 · 课程笔记</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="mobile-header"><button id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">目录</button><span>毒理学笔记</span><button id="mobile-theme" type="button" aria-label="切换明暗主题">明暗</button></header>
+  <div id="backdrop" hidden></div>
+  <aside id="sidebar" class="sidebar" aria-label="课程目录">
+    <a href="#overview" class="brand"><span class="brand-eyebrow">COURSE NOTEBOOK</span><strong>毒理学</strong><span class="brand-sub">课程笔记与案例复习</span></a>
+    <label class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索概念、机制、案例" aria-label="搜索全部笔记"><kbd>/</kbd></label>
+    <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+    <div class="nav-heading">学习目录 <span id="unit-count"></span></div>
+    <nav id="course-nav"></nav>
+    <div class="sidebar-bottom"><button id="theme-toggle" type="button">切换深色</button><a id="repo-link" href="#about">关于笔记</a></div>
+  </aside>
+  <main id="main" tabindex="-1">
+    <div class="topline"><span class="breadcrumb" id="breadcrumb">课程总览</span><div class="tools"><button id="print" type="button">打印本节</button><button id="font-toggle" type="button" aria-pressed="false">大字</button></div></div>
+    <article id="article" class="article" aria-live="polite"></article>
+    <nav class="chapter-pager" id="chapter-pager" aria-label="相邻单元"></nav>
+    <footer class="footer">依据课程材料整理 · 页码均指原 PDF 页序 · <a href="#about">来源与整理说明</a></footer>
+  </main>
+  <aside class="page-outline" aria-label="本节目录"><div class="outline-label">本节内容</div><nav id="outline"></nav><a class="back-top" href="#" id="back-top">回到页首 ↑</a></aside>
+  <noscript>本阅读器需要启用JavaScript。也可直接在仓库的notes目录阅读Markdown笔记。</noscript>
+</body>
+</html>
