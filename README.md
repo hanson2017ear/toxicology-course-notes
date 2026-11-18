@@ -1,10 +1,10 @@
 # 毒理学课程笔记
 
-依据一份316页的课程投影照片，按可核实的内容顺序整理成8个学习单元。正文为简体中文，包含概念、机制、案例、比较表、公式和自测问题，并标注原PDF页序。
+一份按课件顺序整理的毒理学笔记。从水和盐的剂量讲起，再读砷、汞、铅和镉，最后看食品安全与生殖毒理。目录和正文标了原 PDF 页码，方便翻回课件。
 
 **[打开阅读网站](https://hanson2017ear.github.io/toxicology-course-notes/)** · [来源与勘误](sources/corrections.md) · [316页处置索引](sources/page-index.csv)
 
-双酚A专题按体内过程、睾丸靶点与人体结局梳理八项研究，配有机制图和原始研究索引。每个课件单元可切换到复习提纲，从分节导读跳回正文。自测勾选只保存在当前浏览器。[双酚A专题](https://hanson2017ear.github.io/toxicology-course-notes/#bpa-review) · [原始研究索引](sources/bpa-evidence.md) · [复习提纲示例](https://hanson2017ear.github.io/toxicology-course-notes/#unit-08/review)
+想复习某一章，点“复习”就能先看到自测，下面的小节可以跳回正文。另有一篇从课件的双酚 A 案例读到原始研究的专题。[双酚 A 专题](https://hanson2017ear.github.io/toxicology-course-notes/#bpa-review) · [原始研究索引](sources/bpa-evidence.md) · [生殖毒理自测](https://hanson2017ear.github.io/toxicology-course-notes/#unit-08/review)
 
 ## 学习目录
 
@@ -23,7 +23,7 @@
 
 ## 阅读方式
 
-网站提供全文搜索、单元目录、页内目录、明暗主题、大字、阅读位置记忆和当前单元打印。手机可展开左侧目录；按 `/` 聚焦搜索。网站不使用外部字体、统计追踪或后端服务。也可下载后直接打开 `docs/index.html`，或在GitHub阅读上表中的Markdown。
+手机点左上角“目录”换章。电脑按 `/` 可以直接搜索。大字、明暗和自测勾选保存在当前浏览器，首页有上次读过的一章。也可下载后直接打开 `docs/index.html`，或在 GitHub 读上表的 Markdown。
 
 页码指文件的物理页序，不是投影片内部页码。第3页名单未公开，第84和181页为空白分隔，重复与遮挡材料另有说明。索引覆盖316页，并不表示316页都含有可读正文，也不代表已经获得每套PPT的全部投影片。详见[覆盖说明](sources/coverage-report.md)。
 

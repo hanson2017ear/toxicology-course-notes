@@ -2,34 +2,49 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="毒理学课程阅读室：8个课件单元、316页来源索引，含全文笔记、复习提纲、研究比较与专题综述。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按课件顺序整理的毒理学笔记。从剂量、砷汞和铅读到食品安全与生殖毒理，附原PDF页码、自测和论文链接。">
   <meta name="color-scheme" content="light dark">
-  <title>毒理学 · 课程笔记</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="content.js" defer></script>
-  <script src="app.js" defer></script>
+  <title>毒理学笔记</title>
+  <link rel="stylesheet" href="style.css?v=notebook">
+  <script src="content.js?v=notebook" defer></script>
+  <script src="app.js?v=notebook" defer></script>
 </head>
-<body>
-  <div class="reading-progress-track" aria-hidden="true"><div id="reading-progress"></div></div>
+<body data-page="home">
   <a class="skip-link" href="#main">跳到正文</a>
-  <header class="mobile-header"><button id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">目录</button><span>毒理学笔记</span><button id="mobile-theme" type="button" aria-label="切换明暗主题">明暗</button></header>
-  <div id="backdrop" hidden></div>
-  <aside id="sidebar" class="sidebar" aria-label="课程目录">
-    <a href="#overview" class="brand"><span class="brand-eyebrow">COURSE READING ROOM</span><strong>毒理学</strong><span class="brand-sub">课程笔记 · 机制 · 证据</span></a>
-    <label class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索概念、机制、案例" aria-label="搜索全部笔记"><kbd>/</kbd></label>
-    <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
-    <div class="nav-heading">学习目录 <span id="unit-count"></span></div>
-    <nav id="course-nav"></nav>
-    <div class="sidebar-bottom"><button id="theme-toggle" type="button">切换深色</button><a id="repo-link" href="#about">关于笔记</a></div>
-  </aside>
-  <main id="main" tabindex="-1">
-    <div class="topline"><span class="breadcrumb" id="breadcrumb">课程总览</span><div class="tools"><button id="print" type="button">打印本节</button><button id="font-toggle" type="button" aria-pressed="false">大字</button></div></div>
-    <article id="article" class="article" aria-live="polite"></article>
-    <nav class="chapter-pager" id="chapter-pager" aria-label="相邻单元"></nav>
-    <footer class="footer"><span>毒理学课程阅读室</span><span>页码均指原 PDF 页序 · <a href="#about">来源与整理说明</a></span></footer>
-  </main>
-  <aside class="page-outline" aria-label="本节目录"><div class="outline-label">本节内容</div><nav id="outline"></nav><a class="back-top" href="#" id="back-top">回到页首 ↑</a></aside>
-  <noscript>本阅读器需要启用JavaScript。也可直接在仓库的notes目录阅读Markdown笔记。</noscript>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <button id="menu-toggle" class="quiet-button menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">目录</button>
+      <a href="#overview" class="brand">毒理学笔记</a>
+      <label class="search-box">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input id="search" type="search" placeholder="搜笔记，比如 铅 或 BPA" aria-label="搜索笔记" spellcheck="false" autocomplete="off">
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+      <button id="theme-toggle" class="quiet-button" type="button" aria-label="切换深色模式">深色</button>
+    </div>
+  </header>
+  <div class="workspace">
+    <button id="backdrop" class="backdrop" type="button" aria-label="关闭目录" hidden></button>
+    <aside id="sidebar" class="sidebar" aria-label="课件目录">
+      <p class="sidebar-title">课件目录</p>
+      <nav id="course-nav"></nav>
+      <a class="sidebar-link" href="#about">来源与勘误</a>
+    </aside>
+    <main id="main" tabindex="-1">
+      <article id="article" class="article"></article>
+      <nav id="chapter-pager" class="chapter-pager" aria-label="相邻章节" hidden></nav>
+      <footer class="page-footer">
+        <a href="#about">来源与勘误</a>
+        <a id="repo-link" href="https://github.com/hanson2017ear/toxicology-course-notes">GitHub 仓库</a>
+      </footer>
+    </main>
+    <aside id="outline-shell" class="page-outline" aria-label="本章小节" hidden>
+      <p class="outline-title">本章小节</p>
+      <nav id="outline"></nav>
+      <button class="quiet-button back-top" id="back-top" type="button">回到页首</button>
+    </aside>
+  </div>
+  <noscript><p>打开 JavaScript 即可使用目录和搜索。也可以直接读 GitHub 里的 <a href="https://github.com/hanson2017ear/toxicology-course-notes/tree/main/notes">Markdown 笔记</a>。</p></noscript>
 </body>
 </html>
