@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160mm" height="139.7000mm" viewBox="0 0 453.543307 396">
+<title>BPA男性生殖毒性的实验靶点与人体证据</title>
+<desc>药代、两条实验机制及四项人体观察分层呈现；实验路径未连成人体因果链。所有形状均为原创示意，非实验图像或数据。</desc>
+<defs><marker id="arrowhead" markerWidth="6" markerHeight="6" refX="5.4" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M 0 0 L 6 3 L 0 6 Z" fill="#222c28"/></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g id="t:panel-A"><text x="10.000" y="14.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="11" fill="#304f43" text-anchor="start">A</text></g>
+<g id="t:panel-A-title"><text x="25.000" y="14.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#222c28" text-anchor="start">暴露与体内过程 [1]</text></g>
+<g id="n:oral-cup"><path d="M 20 28 L 22 46 Q 28 51 34 46 L 36 28 Z" fill="#eef1ee" stroke="#555e59" stroke-width="0.8"/></g>
+<g id="l:oral-cup-water"><line x1="22" y1="34" x2="34" y2="34" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="t:oral"><text x="47.000" y="39.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#222c28" text-anchor="start">口服BPA</text></g>
+<g id="e:absorption"><line x1="102" y1="35" x2="134" y2="35" stroke="#222c28" stroke-width="1.05" marker-end="url(#arrowhead)"/></g>
+<g id="n:liver"><path d="M 149 29 C 158 21 178 23 184 30 C 187 37 178 44 171 45 L 151 45 Q 144 40 149 29 Z" fill="#eef1ee" stroke="#555e59" stroke-width="0.8"/></g>
+<g id="l:liver-lobe"><line x1="168" y1="28" x2="166" y2="42" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="t:metabolism"><text x="191.000" y="39.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#222c28" text-anchor="start">吸收与结合代谢</text></g>
+<g id="e:urinary-excretion"><line x1="289" y1="35" x2="320" y2="35" stroke="#222c28" stroke-width="1.05" marker-end="url(#arrowhead)"/></g>
+<g id="n:urine-vial"><path d="M 334 26 L 344 26 L 344 45 Q 339 50 334 45 Z" fill="#eef1ee" stroke="#555e59" stroke-width="0.8"/></g>
+<g id="l:vial-cap"><line x1="332" y1="26" x2="346" y2="26" stroke="#555e59" stroke-width="1"/></g>
+<g id="l:vial-liquid"><line x1="335" y1="37" x2="343" y2="37" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="t:urine-biomarker"><text x="352.000" y="39.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#222c28" text-anchor="start">尿总BPA</text></g>
+<g id="t:dosimetry-caution"><text x="226.772" y="64.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="middle">尿总BPA ≠ 睾丸游离BPA；单次口服药代不能代表全部暴露</text></g>
+<g id="l:layer-A"><line x1="10" y1="77" x2="443.5433070866142" y2="77" stroke="#abb2ad" stroke-width="0.65"/></g>
+<g id="t:panel-B"><text x="10.000" y="94.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="11" fill="#304f43" text-anchor="start">B</text></g>
+<g id="t:panel-B-title"><text x="25.000" y="94.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#222c28" text-anchor="start">实验机制：两个靶点与各自的模型条件</text></g>
+<g id="t:steroid-heading"><text x="117.000" y="113.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#304f43" text-anchor="middle">类固醇／睾酮生成 [2]</text></g>
+<g id="t:sertoli-heading"><text x="338.000" y="113.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#304f43" text-anchor="middle">支持细胞骨架／连接 [3,4]</text></g>
+<g id="l:mechanism-divider"><line x1="226.7716535433071" y1="108" x2="226.7716535433071" y2="224" stroke="#abb2ad" stroke-width="0.65"/></g>
+<g id="n:leydig-cell"><ellipse cx="65" cy="151" rx="36" ry="25" fill="#eef1ee" stroke="#555e59" stroke-width="0.9"/></g>
+<g id="n:leydig-nucleus"><ellipse cx="53" cy="150" rx="9" ry="8" fill="#ffffff" stroke="#555e59" stroke-width="0.7"/></g>
+<g id="n:leydig-nucleolus"><ellipse cx="51" cy="149" rx="2" ry="2" fill="#dce2dd" stroke="none" stroke-width="0"/></g>
+<g id="n:leydig-er-1"><path d="M 70 135 C 78 130 87 135 89 139" fill="none" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="n:leydig-er-2"><path d="M 70 139 C 78 135 88 140 90 144" fill="none" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="n:leydig-er-3"><path d="M 71 144 C 80 140 88 145 90 149" fill="none" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="n:leydig-organelle"><ellipse cx="79" cy="163" rx="10" ry="4" fill="#ffffff" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:organelle-cristae"><polyline points="73,163 76,160.5 79,165 82,160.5 86,163" fill="none" stroke="#555e59" stroke-width="0.55"/></g>
+<g id="t:leydig-cell-label"><text x="65.000" y="188.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="middle">Leydig间质细胞示意</text></g>
+<g id="e:steroid-readout"><line x1="105" y1="151" x2="137" y2="151" stroke="#222c28" stroke-width="0.9" marker-end="url(#arrowhead)"/></g>
+<g id="n:testosterone"><ellipse cx="160" cy="151" rx="15" ry="15" fill="#ffffff" stroke="#555e59" stroke-width="0.8"/></g>
+<g id="t:testosterone-symbol"><text x="160.000" y="154.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#304f43" text-anchor="middle">T</text></g>
+<g id="t:testosterone-readout"><text x="164.000" y="179.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="middle">生成改变</text></g>
+<g id="t:fetal-testis-context"><text x="16.000" y="204.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">胎睾丸培养；激素背景与保存状态影响效应</text></g>
+<g id="t:fetal-testis-condition"><text x="16.000" y="219.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="start">人低浓度效应：无促性腺激素条件</text></g>
+<g id="n:sertoli-left"><path d="M 260 135 Q 265 128 276 132 Q 282 126 291 131 Q 299 127 306 135 L 310 174 Q 285 181 260 174 Z" fill="#eef1ee" stroke="#555e59" stroke-width="0.9"/></g>
+<g id="n:sertoli-right"><path d="M 320 135 Q 327 129 335 133 Q 343 127 350 131 Q 359 127 367 135 L 370 174 Q 345 181 320 174 Z" fill="#eef1ee" stroke="#555e59" stroke-width="0.9"/></g>
+<g id="n:sertoli-nucleus-left"><ellipse cx="284" cy="166" rx="8" ry="6" fill="#ffffff" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="n:sertoli-nucleus-right"><ellipse cx="345" cy="166" rx="8" ry="6" fill="#ffffff" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:actin-0-0"><path d="M 268 144 Q 284.5 137 301 143" fill="none" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:actin-0-1"><path d="M 268 150 Q 284.5 143 301 149" fill="none" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:actin-0-2"><path d="M 268 156 Q 284.5 149 301 155" fill="none" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:actin-1-0"><path d="M 327 144 Q 344.0 137 361 143" fill="none" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:actin-1-1"><path d="M 327 150 Q 344.0 143 361 149" fill="none" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:actin-1-2"><path d="M 327 156 Q 344.0 149 361 155" fill="none" stroke="#555e59" stroke-width="0.65"/></g>
+<g id="l:junction-0"><line x1="309" y1="145" x2="321" y2="145" stroke="#222c28" stroke-width="1.4"/></g>
+<g id="l:junction-1"><line x1="309" y1="152" x2="321" y2="152" stroke="#222c28" stroke-width="1.4"/></g>
+<g id="l:junction-2"><line x1="309" y1="159" x2="321" y2="159" stroke="#222c28" stroke-width="1.4"/></g>
+<g id="t:actin-label"><text x="284.000" y="191.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="middle">F-actin骨架</text></g>
+<g id="l:junction-label"><line x1="315" y1="160" x2="385" y2="171" stroke="#555e59" stroke-width="0.6"/></g>
+<g id="t:junction-label"><text x="393.000" y="175.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="middle">连接</text></g>
+<g id="t:age-condition"><text x="239.000" y="204.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">幼鼠与成年鼠结果不同 [3]</text></g>
+<g id="t:human-cell-condition"><text x="239.000" y="219.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="start">人支持细胞：3名供者、体外 [4]</text></g>
+<g id="l:layer-B"><line x1="10" y1="234" x2="443.5433070866142" y2="234" stroke="#abb2ad" stroke-width="0.65"/></g>
+<g id="t:panel-C"><text x="10.000" y="250.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="11" fill="#304f43" text-anchor="start">C</text></g>
+<g id="t:panel-C-title"><text x="25.000" y="250.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#222c28" text-anchor="start">人体观察：研究对象与终点分别比较</text></g>
+<g id="c:human-table-head"><rect x="10" y="260" width="433.5433070866142" height="16" rx="0" fill="#eef1ee" stroke="none" stroke-width="0"/></g>
+<g id="t:human-table-col1"><text x="16.000" y="271.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="start">研究对象</text></g>
+<g id="t:human-table-col2"><text x="147.000" y="271.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="start">观察结局</text></g>
+<g id="t:human-table-col3"><text x="320.000" y="271.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="start">解释边界</text></g>
+<g id="t:human-0-population"><text x="16.000" y="290.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">218名男性 [5]</text></g>
+<g id="t:human-0-outcome"><text x="147.000" y="290.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">部分精液指标不利关联</text></g>
+<g id="t:human-0-boundary"><text x="320.000" y="290.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">职业暴露背景</text></g>
+<g id="l:human-row-0"><line x1="10" y1="297" x2="443.5433070866142" y2="297" stroke="#abb2ad" stroke-width="0.45"/></g>
+<g id="t:human-1-population"><text x="16.000" y="311.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">LIFE 418名 [6]</text></g>
+<g id="t:human-1-outcome"><text x="147.000" y="311.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">多数指标未见不利关联</text></g>
+<g id="t:human-1-boundary"><text x="320.000" y="311.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">未证实保护作用</text></g>
+<g id="l:human-row-1"><line x1="10" y1="318" x2="443.5433070866142" y2="318" stroke="#abb2ad" stroke-width="0.45"/></g>
+<g id="t:human-2-population"><text x="16.000" y="332.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">474名门诊男性 [7]</text></g>
+<g id="t:human-2-outcome"><text x="147.000" y="332.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">部分精子DNA损伤相关</text></g>
+<g id="t:human-2-boundary"><text x="320.000" y="332.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">横断面、重复采尿</text></g>
+<g id="l:human-row-2"><line x1="10" y1="339" x2="443.5433070866142" y2="339" stroke="#abb2ad" stroke-width="0.45"/></g>
+<g id="t:human-3-population"><text x="16.000" y="353.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">128名ART男性 [8]</text></g>
+<g id="t:human-3-outcome"><text x="147.000" y="353.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">受精／活产不利关联</text></g>
+<g id="t:human-3-boundary"><text x="320.000" y="353.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#222c28" text-anchor="start">前瞻、就诊人群</text></g>
+<g id="l:human-row-3"><line x1="10" y1="360" x2="443.5433070866142" y2="360" stroke="#abb2ad" stroke-width="0.45"/></g>
+<g id="t:observational-caution"><text x="226.772" y="374.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="8.5" fill="#555e59" text-anchor="middle">以上为观察关联；[8]的混合模型结果不能全部归因于BPA。</text></g>
+<g id="l:bottom-rule"><line x1="10" y1="381" x2="443.5433070866142" y2="381" stroke="#304f43" stroke-width="0.85"/></g>
+<g id="t:translation-gaps"><text x="226.772" y="391.000" font-family="SimHei, Microsoft YaHei, sans-serif" font-size="9.5" fill="#304f43" text-anchor="middle">外推缺口：内剂量  ·  发育窗口  ·  人群因果</text></g>
+</svg>

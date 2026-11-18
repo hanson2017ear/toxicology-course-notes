@@ -15,11 +15,17 @@ function parse(md) {
   // Only Markdown, no raw HTML from source notes. Generated HTML is trusted locally.
   return marked.parse(md.replace(/<!--[\s\S]*?-->/g,''), {gfm:true});
 }
-for(const unit of course.units) {
-  const md=await read(unit.file);
+for (const entry of [...course.units, course.feature, course.evidence].filter(Boolean)) {
+  const md=await read(entry.file);
   const text=md.replace(/^# .*\r?\n/,'').replace(/^> .*\r?\n/m,'').trim();
-  unit.html=parse(text);
-  unit.plain=text.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*|_`>]/g,'');
+  const readerText = entry.number ? text : text
+    .replaceAll('](https://hanson2017ear.github.io/toxicology-course-notes/#', '](#')
+    .replaceAll('](../docs/assets/', '](assets/')
+    .replaceAll('](bpa-evidence.md)', '](#evidence)')
+    .replaceAll('](bpa-review.md)', '](#bpa-review)')
+    .replaceAll('](page-index.csv)', '](source-index.csv)');
+  entry.html=parse(readerText);
+  entry.plain=text.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*|_`>]/g,'');
 }
 let about=await read('sources/about.md');
 const corrections=(await read('sources/corrections.md')).replace(/^# .*\r?\n/,'');

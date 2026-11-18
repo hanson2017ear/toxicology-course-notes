@@ -4,6 +4,8 @@
 
 **[打开阅读网站](https://hanson2017ear.github.io/toxicology-course-notes/)** · [来源与勘误](sources/corrections.md) · [316页处置索引](sources/page-index.csv)
 
+双酚A专题按体内过程、睾丸靶点与人体结局梳理八项研究，配有机制图和原始研究索引。每个课件单元可切换到复习提纲，从分节导读跳回正文。自测勾选只保存在当前浏览器。[双酚A专题](https://hanson2017ear.github.io/toxicology-course-notes/#bpa-review) · [原始研究索引](sources/bpa-evidence.md) · [复习提纲示例](https://hanson2017ear.github.io/toxicology-course-notes/#unit-08/review)
+
 ## 学习目录
 
 | 单元 | 内容 | 原PDF页序 |

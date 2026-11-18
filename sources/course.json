@@ -1,10 +1,24 @@
 {
   "title": "毒理学课程笔记",
-  "updated": "2026-11-02",
+  "updated": "2026-11-18",
   "repositoryUrl": "https://github.com/hanson2017ear/toxicology-course-notes",
   "source": {
     "pageCount": 316,
     "sha256": "fe5be2e325aea4539bceaebc8eca498e9ab8a7ad1779fb8edec1dd718b6870d5"
+  },
+  "feature": {
+    "id": "bpa-review",
+    "title": "双酚A与男性生殖毒性",
+    "summary": "从口服代谢、两条睾丸实验路径到精液与生育结局，比较八项原始研究。",
+    "pages": "270—273、284—291、316",
+    "updated": "2026-11-18",
+    "file": "sources/bpa-review.md"
+  },
+  "evidence": {
+    "id": "evidence",
+    "title": "双酚A研究证据索引",
+    "summary": "按编号回查原始论文、研究对象、观察结果及阅读边界。",
+    "file": "sources/bpa-evidence.md"
   },
   "units": [
     {
