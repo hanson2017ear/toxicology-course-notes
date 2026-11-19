@@ -166,6 +166,7 @@ body[data-page="search"] .workspace { max-width: 850px; }
 .figure-viewer { width: min(1050px, 96vw); max-width: none; max-height: 95dvh; padding: 0; }
 .figure-toolbar { display: flex; align-items: center; gap: 8px; padding: 6px 12px; }
 .figure-toolbar h2 { font: 600 17px/1.4 var(--display); margin: 0 auto 0 0; }
+#figure-status { position: absolute; z-index: 1; left: 12px; right: 12px; margin: 12px 0 0; padding: 6px 10px; color: var(--body); background: var(--paper); font-size: 14px; }
 .figure-canvas { display: flex; overflow: auto; max-height: calc(94dvh - 53px); background: #fff; }
 .figure-canvas img { display: block; height: auto; width: 100%; object-fit: contain; max-height: calc(94dvh - 53px); }
 .figure-canvas.magnified img { width: max(1100px, 140%); max-height: none; flex: none; align-self: flex-start; }

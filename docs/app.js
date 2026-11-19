@@ -233,6 +233,8 @@
       caption.classList.add('figure-caption');
       const original = img.getAttribute('src');
       const link = [...caption.querySelectorAll('a')].find(a => a.getAttribute('href') === original);
+      img.width = 720;
+      img.height = 624;
       img.src = original + '?v=field-edition-3';
       if (link) link.href = img.src;
       const enlarge = document.createElement('button');
@@ -361,7 +363,19 @@
     const image = event.target.closest('.figure-enlarge')?.querySelector('img');
     if (!image) return;
     const canvas = viewer.querySelector('.figure-canvas');
-    canvas.replaceChildren(image.cloneNode());
+    const enlargedImage = image.cloneNode();
+    const status = $('figure-status');
+    status.hidden = false;
+    status.textContent = '正在载入插图…';
+    const reportImage = () => {
+      if (canvas.firstElementChild !== enlargedImage) return;
+      status.hidden = enlargedImage.naturalWidth > 0;
+      if (!status.hidden) status.textContent = '插图加载失败。请关闭后重试，或点图注中的“打开原图”。';
+    };
+    enlargedImage.addEventListener('load', reportImage, {once:true});
+    enlargedImage.addEventListener('error', reportImage, {once:true});
+    canvas.replaceChildren(enlargedImage);
+    if (enlargedImage.complete) reportImage();
     canvas.classList.remove('magnified');
     $('zoom-figure').setAttribute('aria-pressed','false');
     $('zoom-figure').textContent = '放大';
