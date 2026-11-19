@@ -20,7 +20,7 @@
   const article = $('article');
   const search = $('search');
   const menu = $('menu-toggle');
-  const smallScreen = matchMedia('(max-width: 1019px)');
+  const compactSearch = matchMedia('(max-width: 620px)');
   const title = unit => esc(unit.shortTitle || unit.title);
   let active = 'overview';
   let view = 'read';
@@ -72,37 +72,35 @@
 
   function home() {
     const last = byId.get(storage.get('toxicology-last'));
-    return `<div class="home-intro">
-      <h1>毒理学笔记</h1>
-      <p>课上从水和盐讲剂量，再用拿破仑的死因、水俣病和食品安全几个案例讨论证据。笔记按课件顺序排，右边的数字是原 PDF 页码。</p>
-      ${last?.number ? `<p class="resume"><a href="#${last.id}">接着看《${title(last)}》</a></p>` : ''}
-    </div>
-    <div class="home-columns">
-      <section aria-labelledby="chapters">
-        <div class="contents-head"><h2 id="chapters">课件目录</h2><span>原 PDF 页码</span></div>
-        <ol class="contents-list">${units.map(u => `<li><a href="#${u.id}" class="chapter-entry">
-          <span class="chapter-number">${esc(u.number)}</span>
-          <span class="chapter-description"><strong>${title(u)}</strong><span>${esc(u.summary)}</span></span>
-          <span class="chapter-pages">${esc(u.pages)}</span>
-        </a></li>`).join('')}</ol>
-      </section>
-      <aside class="study-margin" aria-labelledby="reading-guide">
-        <h2 id="reading-guide">复习时翻这几处</h2>
-        <ul>
-          <li><a href="#unit-02/section-0">水和食盐也能讨论毒性？</a><span>第 7–14 页</span></li>
-          <li><a href="#unit-04/section-0">头发里测到砷，能说明什么？</a><span>第 85–90 页</span></li>
-          <li><a href="#unit-08/review">孕期接触和成年后接触，差在哪？</a><span>生殖毒理自测</span></li>
-        </ul>
-        ${course.feature ? `<div class="margin-feature"><h2>课外多读一点</h2><a href="#${course.feature.id}">双酚 A 与男性生殖毒性</a><p>把课上两条机制和四项人体研究放在一起读。配图和论文都可以点开。</p></div>` : ''}
-      </aside>
-    </div>
-    <p class="home-footnote">课件有些页没有拍到，所以这里按照片中的主题分章。<a href="#about">页码、缺页和勘误</a></p>`;
+    const water = units.find(u => u.id === 'unit-02');
+    const fish = units.find(u => u.id === 'unit-04');
+    const fishSection = notes.get(fish.id).guide.find(s => s.title.includes('水俣病'));
+    return `<header class="cover">
+      <div class="cover-copy">
+        <h1>从一杯水，<br>到一条鱼。</h1>
+        <p>第二章用水和盐讲剂量。翻到课件第 109 页，水俣病的示意图把排污的工厂、海里的鱼和吃鱼的人画在了一起。</p>
+        <div class="cover-links"><a href="#${water.id}/section-0">水与剂量</a><a href="#${fish.id}${fishSection ? '/' + fishSection.id : ''}">鱼与水俣病</a></div>
+      </div>
+      <img class="cover-art" src="assets/field-study.webp?v=field-edition-3" width="1536" height="1024" alt="一尾银鱼游过玻璃水杯，鱼身在杯中折射。" fetchpriority="high">
+    </header>
+    <section class="home-columns" aria-labelledby="chapters">
+      <div class="contents-head"><h2 id="chapters">章节目录</h2>
+        ${last?.number ? `<a class="resume" href="#${last.id}">继续读《${title(last)}》</a>` : ''}
+      </div>
+      <ol class="contents-list">${units.map(u => `<li><a href="#${u.id}" class="chapter-entry">
+        <span class="chapter-number" aria-label="第${Number(u.number)}章">${esc(u.number)}</span>
+        <span class="chapter-description"><strong>${title(u)}</strong><span>${esc(u.summary)}</span></span>
+        <span class="chapter-pages" aria-label="原课件第 ${esc(u.pages)} 页">${esc(u.pages.replace(/[—–]/g,'–'))} 页</span>
+      </a></li>`).join('')}</ol>
+    </section>
+    ${course.feature ? `<section class="home-feature"><h2>双酚 A 与男性生殖毒性</h2><div><p>一张图对照睾丸实验和四项人体研究。图中每个编号都能在专题里找到对应的论文。</p><a href="#${course.feature.id}">读专题与机制图</a></div></section>` : ''}
+    <p class="home-footnote">目录按课件照片中的主题编排。页码是原 PDF 的页序。<a href="#about">查缺页与勘误</a></p>`;
   }
 
   function unitHeader(unit) {
     const viewLink = (mode, label) => `<a href="#${unit.id}${mode === 'review' ? '/review' : ''}" ${view === mode ? 'aria-current="page"' : ''}>${label}</a>`;
     return `<div class="chapter-heading">
-      <p class="page-label">第 ${Number(unit.number)} 章 <span>PDF ${esc(unit.pages)} 页</span></p>
+      <p class="page-label"><a href="#overview/chapters">章节目录</a><span>第 ${Number(unit.number)} 章</span><span>课件 ${esc(unit.pages)} 页</span></p>
       <h1>${title(unit)}</h1>
       <div class="reader-tools">
         <nav class="view-switch" aria-label="阅读方式">${viewLink('read','笔记')}${viewLink('review','复习')}</nav>
@@ -149,13 +147,23 @@
   function renderOutline() {
     sectionObserver?.disconnect();
     const headings = [...article.querySelectorAll('h2,h3')];
+    for (const heading of headings) {
+      const match = heading.textContent.trim().match(/^(.*?)[（(]((?:PDF\s*)?(?:第\s*)?\d+[^)）]*页)[）)]$/i);
+      if (!match) continue;
+      heading.dataset.shortTitle = match[1].replace(/^\d+\.\s*/, '').trim();
+      heading.textContent = heading.dataset.shortTitle;
+      const pages = document.createElement('span');
+      pages.className = 'section-pages';
+      pages.textContent = match[2].replace(/^PDF\s*/i, '').trim();
+      heading.append(' ', pages);
+    }
     const outline = $('outline');
     $('outline-shell').hidden = Boolean(query) || active === 'overview' || headings.length < 2;
     if ($('outline-shell').hidden) return;
     const sectionHref = h => `#${active}/${view === 'review' ? 'review/' : ''}${h.id}`;
     headings.forEach((h,i) => { if (!h.id) h.id = `section-${i}`; });
     const linkList = headings.map(h => {
-      const description = h.textContent.trim().replace(/\s*[（(](?:PDF\s*第?\s*)?\d+[^）)]*页[）)]$/, '');
+      const description = h.dataset.shortTitle || h.textContent.trim().replace(/\s*[（(](?:PDF\s*第?\s*)?\d+[^）)]*页[）)]$/, '');
       return `<a class="${h.tagName === 'H3' ? 'subsection' : ''}" href="${sectionHref(h)}">${esc(description)}</a>`;
     }).join('');
     outline.innerHTML = linkList;
@@ -219,14 +227,24 @@
       table.before(wrapper);
       wrapper.append(table);
     });
-    article.querySelectorAll('img[src^="assets/"]').forEach(img => {
+    article.querySelectorAll('.resource-content img[src^="assets/"]').forEach(img => {
       const caption = img.parentElement.nextElementSibling;
       if (!caption?.matches('p') || !/^图\s*\d/.test(caption.textContent)) return;
       caption.classList.add('figure-caption');
       const original = img.getAttribute('src');
       const link = [...caption.querySelectorAll('a')].find(a => a.getAttribute('href') === original);
-      img.src = original + '?v=notebook';
+      img.src = original + '?v=field-edition-3';
       if (link) link.href = img.src;
+      const enlarge = document.createElement('button');
+      enlarge.className = 'figure-enlarge';
+      enlarge.type = 'button';
+      enlarge.setAttribute('aria-label','放大查看双酚 A 机制图');
+      enlarge.setAttribute('aria-haspopup','dialog');
+      img.replaceWith(enlarge);
+      enlarge.append(img);
+      const label = document.createElement('span');
+      label.textContent = '放大看图';
+      enlarge.append(label);
     });
     setPager(resource);
     applyFont(storage.get('toxicology-large') === 'true');
@@ -234,16 +252,13 @@
   }
 
   function closeMenu(restore = false) {
-    const wasOpen = $('sidebar').classList.contains('open');
-    $('sidebar').classList.remove('open');
-    $('backdrop').hidden = true;
-    menu.setAttribute('aria-expanded','false');
-    if (restore && wasOpen) menu.focus();
+    if (!$('sidebar').open) return;
+    $('sidebar').close();
+    if (restore) menu.focus();
   }
 
   function openMenu() {
-    $('sidebar').classList.add('open');
-    $('backdrop').hidden = false;
+    $('sidebar').showModal();
     menu.setAttribute('aria-expanded','true');
     ($('course-nav').querySelector('[aria-current="page"]') || $('course-nav').querySelector('a'))?.focus();
   }
@@ -259,6 +274,8 @@
     search.value = '';
     render();
     closeMenu();
+    if ($('figure-viewer').open) $('figure-viewer').close();
+    setSearchExpanded(false);
     const section = view === 'review' ? subpart : part;
     const target = section ? document.getElementById(section) : null;
     if (target) target.scrollIntoView();
@@ -268,7 +285,7 @@
   function applyTheme(dark) {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     storage.set('toxicology-theme', dark ? 'dark' : 'light');
-    $('theme-toggle').textContent = dark ? '浅色' : '深色';
+    $('theme-toggle').querySelector('.theme-label').textContent = dark ? '浅色' : '深色';
     $('theme-toggle').setAttribute('aria-label', dark ? '切换浅色模式' : '切换深色模式');
   }
 
@@ -291,7 +308,7 @@
   });
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href^="#"]');
-    if (link && link.hash === location.hash && (query || $('sidebar').classList.contains('open'))) {
+    if (link && link.hash === location.hash && (query || $('sidebar').open)) {
       event.preventDefault();
       route();
     }
@@ -300,7 +317,7 @@
     const id = event.target.closest('button')?.id;
     if (id === 'font-toggle') applyFont(!document.body.classList.contains('large-type'));
     if (id === 'print') window.print();
-    if (id === 'clear-search') { route(); search.focus(); }
+    if (id === 'clear-search') { route(); focusSearchControl(); }
     if (id === 'reset-assessment') {
       notes.get(active).questions.forEach(q => delete assessments[questionKey(active,q)]);
       storage.set('toxicology-assessments',JSON.stringify(assessments));
@@ -320,18 +337,57 @@
   document.addEventListener('keydown', event => {
     if (event.key === '/' && !event.target.matches('input, textarea, select, [contenteditable]') && !event.ctrlKey && !event.metaKey) {
       event.preventDefault();
+      if ($('figure-viewer').open || $('sidebar').open) return;
+      setSearchExpanded(true);
       search.focus();
     }
     if (event.key === 'Escape') {
-      if ($('sidebar').classList.contains('open')) closeMenu(true);
-      else if (query || search.value) { route(); search.focus(); }
+      if ($('sidebar').open) closeMenu(true);
+      else if (query || search.value || $('search-box').classList.contains('expanded')) { route(); focusSearchControl(); }
     }
   });
   applyTheme(storage.get('toxicology-theme') === 'dark' || (storage.get('toxicology-theme') === null && matchMedia('(prefers-color-scheme: dark)').matches));
   $('theme-toggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme !== 'dark'));
-  menu.addEventListener('click', () => $('sidebar').classList.contains('open') ? closeMenu(true) : openMenu());
-  $('backdrop').addEventListener('click', () => closeMenu(true));
-  smallScreen.addEventListener('change', () => closeMenu());
+  menu.addEventListener('click', () => $('sidebar').open ? closeMenu(true) : openMenu());
+  $('close-menu').addEventListener('click', () => closeMenu(true));
+  $('sidebar').addEventListener('close', () => menu.setAttribute('aria-expanded','false'));
+  const viewer = $('figure-viewer');
+  [$('sidebar'),viewer].forEach(dialog => dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  }));
+  article.addEventListener('click', event => {
+    const image = event.target.closest('.figure-enlarge')?.querySelector('img');
+    if (!image) return;
+    const canvas = viewer.querySelector('.figure-canvas');
+    canvas.replaceChildren(image.cloneNode());
+    canvas.classList.remove('magnified');
+    $('zoom-figure').setAttribute('aria-pressed','false');
+    $('zoom-figure').textContent = '放大';
+    viewer.showModal();
+    canvas.scrollTo(0,0);
+  });
+  $('close-figure').addEventListener('click', () => viewer.close());
+  $('zoom-figure').addEventListener('click', () => {
+    const enlarged = viewer.querySelector('.figure-canvas').classList.toggle('magnified');
+    $('zoom-figure').setAttribute('aria-pressed',String(enlarged));
+    $('zoom-figure').textContent = enlarged ? '适应屏幕' : '放大';
+  });
+  function setSearchExpanded(open) {
+    $('search-box').classList.toggle('expanded',open);
+    $('search-toggle').setAttribute('aria-expanded',String(open));
+  }
+  function focusSearchControl() {
+    (compactSearch.matches ? $('search-toggle') : search).focus();
+  }
+  $('search-toggle').addEventListener('click', () => {
+    const open = !$('search-box').classList.contains('expanded');
+    if (!open && (query || search.value)) route();
+    setSearchExpanded(open);
+    if (open) search.focus();
+  });
+  compactSearch.addEventListener('change', () => setSearchExpanded(false));
   $('back-top').addEventListener('click', () => window.scrollTo(0,0));
   document.querySelector('.skip-link').addEventListener('click', event => { event.preventDefault(); $('main').focus(); });
   window.addEventListener('hashchange', route);

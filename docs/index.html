@@ -6,31 +6,34 @@
   <meta name="description" content="按课件顺序整理的毒理学笔记。从剂量、砷汞和铅读到食品安全与生殖毒理，附原PDF页码、自测和论文链接。">
   <meta name="color-scheme" content="light dark">
   <title>毒理学笔记</title>
-  <link rel="stylesheet" href="style.css?v=notebook">
-  <script src="content.js?v=notebook" defer></script>
-  <script src="app.js?v=notebook" defer></script>
+  <link rel="stylesheet" href="style.css?v=field-edition-3">
+  <script src="content.js?v=field-edition-3" defer></script>
+  <script src="app.js?v=field-edition-3" defer></script>
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">跳到正文</a>
   <header class="masthead">
     <div class="masthead-inner">
-      <button id="menu-toggle" class="quiet-button menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">目录</button>
-      <a href="#overview" class="brand">毒理学笔记</a>
-      <label class="search-box">
+      <a href="#overview" class="brand"><span class="book-mark" aria-hidden="true"><i></i></span>毒理学笔记</a>
+      <nav class="top-navigation" aria-label="笔记导航">
+        <button id="menu-toggle" class="quiet-button menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">目录</button>
+        <a class="feature-link" href="#bpa-review">双酚 A 专题</a>
+      </nav>
+      <button type="button" class="search-toggle quiet-button" id="search-toggle" aria-expanded="false" aria-controls="search-box" aria-label="搜索笔记"><span class="search-icon" aria-hidden="true"></span></button>
+      <label class="search-box" id="search-box">
         <span class="search-icon" aria-hidden="true"></span>
-        <input id="search" type="search" placeholder="搜笔记，比如 铅 或 BPA" aria-label="搜索笔记" spellcheck="false" autocomplete="off">
+        <input id="search" type="search" placeholder="搜索章节、案例或术语" aria-label="搜索笔记" spellcheck="false" autocomplete="off">
         <kbd aria-hidden="true">/</kbd>
       </label>
-      <button id="theme-toggle" class="quiet-button" type="button" aria-label="切换深色模式">深色</button>
+      <button id="theme-toggle" class="quiet-button theme-toggle" type="button" aria-label="切换深色模式"><span class="theme-symbol" aria-hidden="true"></span><span class="theme-label">深色</span></button>
     </div>
   </header>
-  <div class="workspace">
-    <button id="backdrop" class="backdrop" type="button" aria-label="关闭目录" hidden></button>
-    <aside id="sidebar" class="sidebar" aria-label="课件目录">
-      <p class="sidebar-title">课件目录</p>
+  <dialog id="sidebar" class="sidebar" aria-labelledby="menu-title">
+      <div class="drawer-head"><h2 id="menu-title">目录</h2><button type="button" class="quiet-button" id="close-menu">关闭</button></div>
       <nav id="course-nav"></nav>
       <a class="sidebar-link" href="#about">来源与勘误</a>
-    </aside>
+  </dialog>
+  <div class="workspace">
     <main id="main" tabindex="-1">
       <article id="article" class="article"></article>
       <nav id="chapter-pager" class="chapter-pager" aria-label="相邻章节" hidden></nav>
@@ -45,6 +48,10 @@
       <button class="quiet-button back-top" id="back-top" type="button">回到页首</button>
     </aside>
   </div>
+  <dialog id="figure-viewer" class="figure-viewer" aria-labelledby="figure-title">
+    <div class="figure-toolbar"><h2 id="figure-title">双酚 A 机制图</h2><button type="button" class="quiet-button" id="zoom-figure" aria-pressed="false">放大</button><button type="button" class="quiet-button" id="close-figure" autofocus>关闭</button></div>
+    <div class="figure-canvas" tabindex="0" role="region" aria-label="可滚动查看机制图"></div>
+  </dialog>
   <noscript><p>打开 JavaScript 即可使用目录和搜索。也可以直接读 GitHub 里的 <a href="https://github.com/hanson2017ear/toxicology-course-notes/tree/main/notes">Markdown 笔记</a>。</p></noscript>
 </body>
 </html>
