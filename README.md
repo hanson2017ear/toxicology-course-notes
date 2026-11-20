@@ -4,7 +4,7 @@
 
 **[打开阅读网站](https://hanson2017ear.github.io/toxicology-course-notes/)** · [来源与勘误](sources/corrections.md) · [316页处置索引](sources/page-index.csv)
 
-想复习某一章，点“复习”就能先看到自测，下面的小节可以跳回正文。另外有一篇双酚 A 专题，从课件里的案例出发，对回八篇原始研究。[双酚 A 专题](https://hanson2017ear.github.io/toxicology-course-notes/#bpa-review) · [原始研究索引](sources/bpa-evidence.md) · [生殖毒理自测](https://hanson2017ear.github.io/toxicology-course-notes/#unit-08/review)
+有自测的章节可点“复习”，下面的小节链接能跳回正文。另外有一篇双酚 A 专题，从课件里的案例出发，对回八篇原始研究。[双酚 A 专题](https://hanson2017ear.github.io/toxicology-course-notes/#bpa-review) · [原始研究索引](sources/bpa-evidence.md) · [生殖毒理自测](https://hanson2017ear.github.io/toxicology-course-notes/#unit-08/review)
 
 ## 学习目录
 
@@ -41,4 +41,4 @@ npm run verify
 
 构建只需要固定版本的 `marked`。如运行环境已提供该依赖，可把 `NOTES_NODE_MODULES` 设为该环境的模块目录，省去安装。生成的 `docs/content.js` 随仓库保存，阅读网站无需安装任何依赖。
 
-GitHub Pages发布源为 `main` 分支的 `/docs`。笔记与网页的来源边界、隐私排除和使用条件见[NOTICE](NOTICE.md)，实际使用的Skills见[整理方法](SKILLS.md)。
+GitHub Pages 从 `main` 分支的 `/docs` 发布。[来源与使用说明](NOTICE.md) · [整理方法](SKILLS.md)

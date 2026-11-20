@@ -22,7 +22,7 @@ assert.match(rows[2],/隐私排除/);
 assert.match(rows[83],/空白分隔/);assert.match(rows[180],/空白分隔/);
 for(const unit of course.units) {
   assert.ok(unit.html.length>300,unit.id+' missing content');
-  assert.match(unit.html,/自测/);
+  assert.equal(/<h2>本单元自测<\/h2>/.test(unit.html), unit.id !== 'unit-01', unit.id+' quiz section');
   assert.ok(!/<script|<iframe|<img/i.test(unit.html));
   assert.ok(unit.plain.includes('页'));
 }

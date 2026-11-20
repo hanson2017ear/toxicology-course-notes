@@ -100,11 +100,12 @@
 
   function unitHeader(unit) {
     const viewLink = (mode, label) => `<a href="#${unit.id}${mode === 'review' ? '/review' : ''}" ${view === mode ? 'aria-current="page"' : ''}>${label}</a>`;
+    const canReview = notes.get(unit.id).questions.length > 0;
     return `<div class="chapter-heading">
       <p class="page-label"><a href="#overview/chapters">章节目录</a><span>第 ${Number(unit.number)} 章</span><span>课件 ${esc(unit.pages)} 页</span></p>
       <h1>${title(unit)}</h1>
       <div class="reader-tools">
-        <nav class="view-switch" aria-label="阅读方式">${viewLink('read','笔记')}${viewLink('review','复习')}</nav>
+        ${canReview ? `<nav class="view-switch" aria-label="阅读方式">${viewLink('read','笔记')}${viewLink('review','复习')}</nav>` : ''}
         <div class="tool-buttons"><button id="font-toggle" class="quiet-button" type="button">大字</button><button id="print" class="quiet-button" type="button">打印</button></div>
       </div></div>`;
   }
@@ -272,7 +273,7 @@
     try { hash = decodeURIComponent(location.hash.slice(1)); } catch {}
     const [id, part, subpart] = hash.split('/');
     active = id === 'about' || byId.has(id) ? id : 'overview';
-    view = part === 'review' && byId.get(active)?.number ? 'review' : 'read';
+    view = part === 'review' && notes.get(active)?.questions.length ? 'review' : 'read';
     query = '';
     search.value = '';
     render();

@@ -2,9 +2,9 @@
 
 | Skill | 本项目中的用途 |
 | --- | --- |
-| writing-plans | 将逐页覆盖、内容整理、隐私排除、网站与发布验收拆成步骤 |
-| humanizer | 减少空泛套话，用具体概念、机制和页码表达 |
-| claude-design | 设计适合长期阅读的HTML界面，并要求真实浏览器验证 |
+| writing-plans | 安排逐页核对、笔记整理和网站检查 |
+| humanizer | 修改笔记中重复、生硬的句子 |
+| claude-design | 设计网页，在浏览器里试读 |
 | popular-web-designs | 参考阅读页面的留白、层次和导航 |
 
 上表列的是这个网站整理时实际用过的 Skill。
