@@ -93,7 +93,7 @@
         <span class="chapter-pages" aria-label="原课件第 ${esc(u.pages)} 页">${esc(u.pages.replace(/[—–]/g,'–'))} 页</span>
       </a></li>`).join('')}</ol>
     </section>
-    ${course.feature ? `<section class="home-feature"><h2>双酚 A 与男性生殖毒性</h2><div><p>一张图对照睾丸实验和四项人体研究。图中每个编号都能在专题里找到对应的论文。</p><a href="#${course.feature.id}">读专题与机制图</a></div></section>` : ''}
+    ${course.feature ? `<section class="home-feature"><h2>双酚 A 与男性生殖毒性</h2><div><p>一张图对照睾丸实验和四项人体研究。图里的编号，跟专题里的论文一一对应。</p><a href="#${course.feature.id}">读专题与机制图</a></div></section>` : ''}
     <p class="home-footnote">目录按课件照片中的主题编排。页码是原 PDF 的页序。<a href="#about">查缺页与勘误</a></p>`;
   }
 
