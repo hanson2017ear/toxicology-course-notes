@@ -45,7 +45,8 @@
       s.siblings.filter(n => n.matches('ol,ul')).flatMap(n => [...n.querySelectorAll(':scope > li')].map(li => li.textContent.trim())));
     const guide = sections.filter(s => !/自测|参考文献/.test(s.title)).map(s => {
       const lead = s.siblings.find(n => n.tagName === 'P')?.textContent.trim() || '';
-      return {...s, excerpt:lead.length > 136 ? lead.slice(0,136) + '…' : lead};
+      const excerpt = lead.match(/^[\s\S]*?[。！？][”’」』）】]*/)?.[0] || '';
+      return {...s, excerpt};
     });
     return [unit.id, {html:doc.body.innerHTML, questions, guide}];
   }));
