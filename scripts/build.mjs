@@ -17,21 +17,15 @@ function parse(md) {
 }
 for (const entry of [...course.units, course.feature, course.evidence].filter(Boolean)) {
   const md=await read(entry.file);
-  const text=md.replace(/^# .*\r?\n/,'').replace(/^> .*\r?\n/m,'').trim();
+  const text=md.replace(/^# .*\r?\n/,'').trim();
   const readerText = entry.number ? text : text
     .replaceAll('](https://hanson2017ear.github.io/toxicology-course-notes/#', '](#')
     .replaceAll('](../docs/assets/', '](assets/')
     .replaceAll('](bpa-evidence.md)', '](#evidence)')
-    .replaceAll('](bpa-review.md)', '](#bpa-review)')
-    .replaceAll('](page-index.csv)', '](source-index.csv)');
+    .replaceAll('](bpa-review.md)', '](#bpa-review)');
   entry.html=parse(readerText);
   entry.plain=text.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*|_`>]/g,'');
 }
-let about=await read('sources/about.md');
-const corrections=(await read('sources/corrections.md')).replace(/^# .*\r?\n/,'');
-about=about.replace('<!-- CORRECTIONS -->',corrections);
-course.aboutHtml=parse(about);
 // Embedded data supports both GitHub Pages and offline file:// reading.
 await fs.writeFile(path.join(root,'docs/content.js'),'window.COURSE = '+JSON.stringify(course).replace(/</g,'\\u003c')+';\n');
-await fs.copyFile(path.join(root,'sources/page-index.csv'),path.join(root,'docs/source-index.csv'));
-console.log(`Built ${course.units.length} units; ${course.source.pageCount} source pages indexed.`);
+console.log(`Built ${course.units.length} course chapters.`);

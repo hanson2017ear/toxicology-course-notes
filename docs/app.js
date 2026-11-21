@@ -79,7 +79,7 @@
     return `<header class="cover">
       <div class="cover-copy">
         <h1>从一杯水，<br>到一条鱼。</h1>
-        <p>第二章用水和盐讲剂量。翻到课件第 109 页，水俣病的示意图把排污的工厂、海里的鱼和吃鱼的人画在了一起。</p>
+        <p>讲剂量时，老师拿喝水和吃盐举例。讲到水俣病，又顺着工厂排污、鱼和人的餐桌，说到人是怎么接触甲基汞的。</p>
         <div class="cover-links"><a href="#${water.id}/section-0">水与剂量</a><a href="#${fish.id}${fishSection ? '/' + fishSection.id : ''}">鱼与水俣病</a></div>
       </div>
       <img class="cover-art" src="assets/field-study.webp?v=field-edition-3" width="1536" height="1024" alt="一尾银鱼游过玻璃水杯，鱼身在杯中折射。" fetchpriority="high">
@@ -91,18 +91,16 @@
       <ol class="contents-list">${units.map(u => `<li><a href="#${u.id}" class="chapter-entry">
         <span class="chapter-number" aria-label="第${Number(u.number)}章">${esc(u.number)}</span>
         <span class="chapter-description"><strong>${title(u)}</strong><span>${esc(u.summary)}</span></span>
-        <span class="chapter-pages" aria-label="原课件第 ${esc(u.pages)} 页">${esc(u.pages.replace(/[—–]/g,'–'))} 页</span>
       </a></li>`).join('')}</ol>
     </section>
-    ${course.feature ? `<section class="home-feature"><h2>双酚 A 与男性生殖毒性</h2><div><p>一张图对照睾丸实验和四项人体研究。图里的编号，跟专题里的论文一一对应。</p><a href="#${course.feature.id}">读专题与机制图</a></div></section>` : ''}
-    <p class="home-footnote">目录按课件照片中的主题编排。页码是原 PDF 的页序。<a href="#about">查缺页与勘误</a></p>`;
+    ${course.feature ? `<section class="home-feature"><h2>双酚 A 与男性生殖毒性</h2><div><p>一张图对照睾丸实验和四项人体研究。图里的编号，跟专题里的论文一一对应。</p><a href="#${course.feature.id}">读专题与机制图</a></div></section>` : ''}`;
   }
 
   function unitHeader(unit) {
     const viewLink = (mode, label) => `<a href="#${unit.id}${mode === 'review' ? '/review' : ''}" ${view === mode ? 'aria-current="page"' : ''}>${label}</a>`;
     const canReview = notes.get(unit.id).questions.length > 0;
     return `<div class="chapter-heading">
-      <p class="page-label"><a href="#overview/chapters">章节目录</a><span>第 ${Number(unit.number)} 章</span><span>课件 ${esc(unit.pages)} 页</span></p>
+      <p class="page-label"><a href="#overview/chapters">章节目录</a><span>第 ${Number(unit.number)} 章</span></p>
       <h1>${title(unit)}</h1>
       <div class="reader-tools">
         ${canReview ? `<nav class="view-switch" aria-label="阅读方式">${viewLink('read','笔记')}${viewLink('review','复习')}</nav>` : ''}
@@ -149,23 +147,13 @@
   function renderOutline() {
     sectionObserver?.disconnect();
     const headings = [...article.querySelectorAll('h2,h3')];
-    for (const heading of headings) {
-      const match = heading.textContent.trim().match(/^(.*?)[（(]((?:PDF\s*)?(?:第\s*)?\d+[^)）]*页)[）)]$/i);
-      if (!match) continue;
-      heading.dataset.shortTitle = match[1].replace(/^\d+\.\s*/, '').trim();
-      heading.textContent = heading.dataset.shortTitle;
-      const pages = document.createElement('span');
-      pages.className = 'section-pages';
-      pages.textContent = match[2].replace(/^PDF\s*/i, '').trim();
-      heading.append(' ', pages);
-    }
     const outline = $('outline');
     $('outline-shell').hidden = Boolean(query) || active === 'overview' || headings.length < 2;
     if ($('outline-shell').hidden) return;
     const sectionHref = h => `#${active}/${view === 'review' ? 'review/' : ''}${h.id}`;
     headings.forEach((h,i) => { if (!h.id) h.id = `section-${i}`; });
     const linkList = headings.map(h => {
-      const description = h.dataset.shortTitle || h.textContent.trim().replace(/\s*[（(](?:PDF\s*第?\s*)?\d+[^）)]*页[）)]$/, '');
+      const description = h.textContent.trim();
       return `<a class="${h.tagName === 'H3' ? 'subsection' : ''}" href="${sectionHref(h)}">${esc(description)}</a>`;
     }).join('');
     outline.innerHTML = linkList;
@@ -204,7 +192,7 @@
         const text = r.plain.replace(/\s+/g,' ');
         const match = folded(text).indexOf(needle);
         const from = Math.max(0,match-27);
-        return `<li><a href="#${r.id}"><h2>${highlight(r.shortTitle || r.title)}</h2>${r.number ? `<span class="result-meta">PDF ${esc(r.pages)} 页</span>` : ''}
+        return `<li><a href="#${r.id}"><h2>${highlight(r.shortTitle || r.title)}</h2>
           <p>${from ? '…' : ''}${highlight(text.slice(from,from+143))}${text.length > from+143 ? '…' : ''}</p></a></li>`;
       }).join('')}</ul>` : '<p>试试一个更短的词，比如“铅”或“剂量”。</p><button type="button" class="quiet-button" id="clear-search">清空搜索</button>'}`;
   }
@@ -218,7 +206,7 @@
       article.innerHTML = unitHeader(resource) + (view === 'review' ? review(resource) : `<div class="source-content">${notes.get(active).html}</div>`);
       storage.set('toxicology-last',active);
     } else if (resource) article.innerHTML = renderResource(resource);
-    else article.innerHTML = active === 'about' ? course.aboutHtml : home();
+    else article.innerHTML = home();
     document.title = query ? '搜索 · 毒理学笔记' : resource ? `${resource.title} · 毒理学笔记` : '毒理学笔记';
     article.querySelectorAll('table').forEach(table => {
       const wrapper = document.createElement('div');
@@ -272,7 +260,7 @@
     let hash = '';
     try { hash = decodeURIComponent(location.hash.slice(1)); } catch {}
     const [id, part, subpart] = hash.split('/');
-    active = id === 'about' || byId.has(id) ? id : 'overview';
+    active = byId.has(id) ? id : 'overview';
     view = part === 'review' && notes.get(active)?.questions.length ? 'review' : 'read';
     query = '';
     search.value = '';
@@ -280,7 +268,7 @@
     closeMenu();
     if ($('figure-viewer').open) $('figure-viewer').close();
     setSearchExpanded(false);
-    const section = view === 'review' ? subpart : part;
+    const section = id === 'about' ? 'chapters' : view === 'review' ? subpart : part;
     const target = section ? document.getElementById(section) : null;
     if (target) target.scrollIntoView();
     else window.scrollTo(0,0);

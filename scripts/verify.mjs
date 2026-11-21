@@ -10,6 +10,8 @@ const context={window:{}};
 vm.runInNewContext(await fs.readFile(path.join(root,'docs/content.js'),'utf8'),context);
 const course=context.window.COURSE;
 assert.equal(course.units.length,8);
+assert.equal(course.aboutHtml, undefined);
+await assert.rejects(fs.access(path.join(root,'docs/source-index.csv')), {code:'ENOENT'});
 assert.equal(course.feature.id,'bpa-review');
 assert.match(course.feature.html,/<img src="assets\/bpa-evidence\.svg"/);
 assert.match(course.evidence.html,/置信区间/);
@@ -24,7 +26,7 @@ for(const unit of course.units) {
   assert.ok(unit.html.length>300,unit.id+' missing content');
   assert.equal(/<h2>本单元自测<\/h2>/.test(unit.html), unit.id !== 'unit-01', unit.id+' quiz section');
   assert.ok(!/<script|<iframe|<img/i.test(unit.html));
-  assert.ok(unit.plain.includes('页'));
+  assert.doesNotMatch(unit.plain, /\bPDF\b|页码|\d+\s*页/u, unit.id+' page reference');
 }
 async function walk(dir) {
   for(const entry of await fs.readdir(dir,{withFileTypes:true})) {
