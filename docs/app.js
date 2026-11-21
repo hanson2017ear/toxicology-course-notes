@@ -111,8 +111,7 @@
   function review(unit) {
     const {guide, questions} = notes.get(unit.id);
     return `<section class="self-assessment">
-      <div class="section-heading"><h2 id="review-questions">先做几道题</h2><span id="assessment-count" aria-live="polite">${questionCount(unit.id)}</span></div>
-      <p>先试着回答。有把握了就打勾。</p>
+      <div class="section-heading"><h2 id="review-questions">复习回顾</h2><span id="assessment-count" aria-live="polite">${questionCount(unit.id)}</span></div>
       <ol class="question-list">${questions.map(q => {
         const key = questionKey(unit.id,q);
         return `<li><label><input type="checkbox" data-assessment="${esc(key)}" ${assessments[key] ? 'checked' : ''}><span>${esc(q)}</span></label></li>`;
@@ -122,6 +121,20 @@
     <section class="review-guide"><h2 id="review-guide">按小节回看</h2>
       ${guide.map(s => `<details class="guide-section"><summary>${esc(s.title)}</summary>
         <div>${s.excerpt ? `<p>${esc(s.excerpt)}</p>` : ''}<a href="#${unit.id}/${s.id}">读这一节</a></div></details>`).join('')}
+    </section>`;
+  }
+
+  function mindMap(unit) {
+    return `<section class="mind-map" aria-labelledby="mind-map">
+      <h2 id="mind-map">思维导图</h2>
+      <p class="map-root">${title(unit)}</p>
+      <ul class="map-branches">${unit.mindMap.map(branch => `
+        <li class="map-branch">
+          ${branch.section === null
+            ? `<strong class="map-label">${esc(branch.topic)}</strong>`
+            : `<a class="map-label" href="#${unit.id}/section-${branch.section}">${esc(branch.topic)}</a>`}
+          <ul class="map-points">${branch.points.map(point => `<li>${esc(point)}</li>`).join('')}</ul>
+        </li>`).join('')}</ul>
     </section>`;
   }
 
@@ -203,7 +216,9 @@
     navigation();
     if (query) article.innerHTML = results();
     else if (resource?.number) {
-      article.innerHTML = unitHeader(resource) + (view === 'review' ? review(resource) : `<div class="source-content">${notes.get(active).html}</div>`);
+      article.innerHTML = unitHeader(resource)
+        + (view === 'review' ? review(resource) : `<div class="source-content">${notes.get(active).html}</div>`)
+        + mindMap(resource);
       storage.set('toxicology-last',active);
     } else if (resource) article.innerHTML = renderResource(resource);
     else article.innerHTML = home();

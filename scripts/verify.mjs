@@ -27,6 +27,12 @@ for(const unit of course.units) {
   assert.equal(/<h2>本单元自测<\/h2>/.test(unit.html), unit.id !== 'unit-01', unit.id+' quiz section');
   assert.ok(!/<script|<iframe|<img/i.test(unit.html));
   assert.doesNotMatch(unit.plain, /\bPDF\b|页码|\d+\s*页/u, unit.id+' page reference');
+  const headingCount = [...unit.html.matchAll(/<h[23][\s>]/g)].length;
+  assert.ok(Array.isArray(unit.mindMap) && unit.mindMap.length >= 3, unit.id+' mind map');
+  for (const {topic, section, points} of unit.mindMap) {
+    assert.ok(topic.trim() && points.length > 1 && points.every(p => p.trim()), unit.id+' mind map branch');
+    assert.ok(section === null || (Number.isInteger(section) && section >= 0 && section < headingCount), unit.id+' mind map link');
+  }
 }
 async function walk(dir) {
   for(const entry of await fs.readdir(dir,{withFileTypes:true})) {

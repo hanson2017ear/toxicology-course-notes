@@ -10,6 +10,7 @@ catch(error) {
 }
 const read = p => fs.readFile(path.join(root,p),'utf8');
 const course = JSON.parse(await read('sources/course.json'));
+const mindMaps = JSON.parse(await read('sources/mind-maps.json'));
 marked.use({renderer:{html(){return '';}}});
 function parse(md) {
   // Only Markdown, no raw HTML from source notes. Generated HTML is trusted locally.
@@ -25,6 +26,7 @@ for (const entry of [...course.units, course.feature, course.evidence].filter(Bo
     .replaceAll('](bpa-review.md)', '](#bpa-review)');
   entry.html=parse(readerText);
   entry.plain=text.replace(/\[([^\]]+)\]\([^)]+\)/g,'$1').replace(/[#*|_`>]/g,'');
+  if (entry.number) entry.mindMap = mindMaps[entry.id];
 }
 // Embedded data supports both GitHub Pages and offline file:// reading.
 await fs.writeFile(path.join(root,'docs/content.js'),'window.COURSE = '+JSON.stringify(course).replace(/</g,'\\u003c')+';\n');
