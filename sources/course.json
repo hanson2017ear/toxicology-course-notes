@@ -31,8 +31,7 @@
         4
       ],
       "summary": "老师开篇介绍了哪些案例，课是怎么安排的。",
-      "file": "notes/01.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/01.md"
     },
     {
       "id": "unit-02",
@@ -44,8 +43,7 @@
         38
       ],
       "summary": "从一杯水和一勺盐讲起，读懂剂量、途径和毒效应。",
-      "file": "notes/02.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/02.md"
     },
     {
       "id": "unit-03",
@@ -57,8 +55,7 @@
         83
       ],
       "summary": "跟着 Alice Hamilton 去工作现场找线索，再看苯、粉尘和尘肺。",
-      "file": "notes/03.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/03.md"
     },
     {
       "id": "unit-04",
@@ -70,8 +67,7 @@
         128
       ],
       "summary": "拿破仑的头发、水俣病的鱼。两则案例里的化学证据各能说明什么？",
-      "file": "notes/04.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/04.md"
     },
     {
       "id": "unit-05",
@@ -83,8 +79,7 @@
         170
       ],
       "summary": "从罗马人的餐具读到血铅，弄清铅会伤到哪里。",
-      "file": "notes/05.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/05.md"
     },
     {
       "id": "unit-06",
@@ -96,8 +91,7 @@
         180
       ],
       "summary": "为什么痛痛病讲的是骨痛，却要先理解肾小管？",
-      "file": "notes/06.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/06.md"
     },
     {
       "id": "unit-07",
@@ -109,8 +103,7 @@
         248
       ],
       "summary": "添加剂、污染物和违规添加，放到几个实际案例里分清楚。",
-      "file": "notes/07.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/07.md"
     },
     {
       "id": "unit-08",
@@ -122,8 +115,7 @@
         316
       ],
       "summary": "一份精液报告能回答什么？从激素、细胞和接触时间慢慢拆开。",
-      "file": "notes/08.md",
-      "sourceLabel": "课件主题，非已核实课次"
+      "file": "notes/08.md"
     }
   ]
 }
