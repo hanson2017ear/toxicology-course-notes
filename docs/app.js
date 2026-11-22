@@ -240,7 +240,7 @@
       const link = [...caption.querySelectorAll('a')].find(a => a.getAttribute('href') === original);
       img.width = 720;
       img.height = 624;
-      img.src = original + '?v=field-edition-3';
+      img.src = original + '?v=field-edition-4';
       if (link) link.href = img.src;
       const enlarge = document.createElement('button');
       enlarge.className = 'figure-enlarge';

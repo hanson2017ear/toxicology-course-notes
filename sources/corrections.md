@@ -22,4 +22,4 @@
 4. [市场监管总局对第4063号建议的答复（2026年公开）](https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/spscs/art/2026/art_7e2f83ff05a54fe1b9a18f43a8b207ca.html)。与上述标签标准实施时间交叉核对；整理日尚在实施日前。
 5. [NCI：Diethylstilbestrol (DES) Exposure and Cancer](https://www.cancer.gov/about-cancer/causes-prevention/risk/hormones/des-fact-sheet)。用于DES孕期使用历史及地区边界。
 
-历史统计、新闻个案、限量表、法律摘录和实验数值若未附独立核验来源，仍按原课件语境阅读。具体化学形态、剂量、时间窗和研究模型不能省略。
+勘误表以外，笔记里的历史统计、新闻个案、限量表、法律摘录和实验数值沿用课堂资料。补充资料的出处在各章注明。

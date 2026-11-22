@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160mm" height="138.64167mm" viewBox="0 0 720 623.8875" role="img" aria-labelledby="plate-title plate-desc">
 <title id="plate-title">双酚 A 的口服代谢、睾丸实验与人体观察</title>
-<desc id="plate-desc">上方为双酚 A 的结构与口服后结合代谢、尿排出的过程。中央组织示意分两处：左为睾丸间质细胞，右为生精上皮中相邻的支持细胞。下方四行独立列出工人、备孕、不孕症门诊和辅助生殖人群的观察结果。实验靶点与人类生育结局的因果联系仍待验证。插画为组织示意，非显微照片。</desc>
+<desc id="plate-desc">上方为双酚 A 的结构与口服后结合代谢、尿排出的过程。中央组织示意分两处：左为睾丸间质细胞，右为生精上皮中相邻的支持细胞。下方四行列出工人、备孕、不孕症门诊和辅助生殖人群的观察结果。工人样本和备孕队列的精液指标结果有出入。细胞插画由 AI 生成，用来说明组织结构。</desc>
 <rect id="paper" width="720" height="623.8875" fill="white"/>
 <text id="panel-A" x="8" y="24" fill="#364f45" font-family="Georgia, Times New Roman, serif" font-size="24" font-weight="400" font-style="italic" text-anchor="start">A</text>
 <text id="heading-A" x="39" y="24" fill="#252b27" font-family="SimSun, Songti SC, Noto Serif CJK SC, serif" font-size="22" font-weight="700" font-style="normal" text-anchor="start">双酚 A 的口服代谢</text>
@@ -63,5 +63,5 @@
 <text id="size-8" x="284" y="570" fill="#414941" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15.5" font-weight="400" font-style="normal" text-anchor="end">128 人</text>
 <text id="result-8" x="320" y="570" fill="#252b27" font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif" font-size="15.5" font-weight="400" font-style="normal" text-anchor="start">父亲孕前尿 BPA 与受精、活产呈不利关联</text>
 <path id="row-end-3" d="M18 579 H705" fill="none" stroke="#c6c8c0" stroke-width="0.65" stroke-linejoin="round" stroke-linecap="round"/>
-<text id="human-boundary" x="18" y="609" fill="#252b27" font-family="SimSun, Songti SC, Noto Serif CJK SC, serif" font-size="16" font-weight="700" font-style="normal" text-anchor="start">人群研究的结果不一致，从实验靶点到人类生育结局的因果联系仍待验证。</text>
+<text id="human-boundary" x="18" y="609" fill="#252b27" font-family="SimSun, Songti SC, Noto Serif CJK SC, serif" font-size="16" font-weight="700" font-style="normal" text-anchor="start">工人研究和备孕队列在精液指标上有出入。四项人群研究报告的是关联。</text>
 </svg>
